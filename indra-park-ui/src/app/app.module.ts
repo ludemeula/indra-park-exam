@@ -11,12 +11,16 @@ import {DemoMaterialModule} from './demo-material-module';
 import {TestComponent} from './view/test/test.component';
 import {TestService} from './services/test.service';
 import {HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { OperacaoComponent } from './layouts/operacao/operacao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullComponent,
-    TestComponent
+    TestComponent,
+    DashboardComponent,
+    OperacaoComponent
   ],
   imports: [
     MatMenuModule,
