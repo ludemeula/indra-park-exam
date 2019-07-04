@@ -10,7 +10,7 @@ export const AppRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'test',
+        redirectTo: 'dashboard',
         pathMatch: 'full'
       },
       {
