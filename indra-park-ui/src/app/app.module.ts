@@ -11,8 +11,9 @@ import {DemoMaterialModule} from './demo-material-module';
 import {TestComponent} from './view/test/test.component';
 import {TestService} from './services/test.service';
 import {HttpClientModule} from '@angular/common/http';
-import { DashboardComponent } from './view/dashboard/dashboard.component';
-import { OperacaoComponent } from './view/operacao/operacao.component';
+import {DashboardComponent} from './view/dashboard/dashboard.component';
+import {OperacaoComponent} from './view/operacao/operacao.component';
+import {SaidaComponent} from './view/saida/saida.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { OperacaoComponent } from './view/operacao/operacao.component';
     TestComponent,
     DashboardComponent,
     OperacaoComponent,
+    SaidaComponent,
   ],
   imports: [
     MatMenuModule,
