@@ -4,6 +4,8 @@ import { FullComponent } from './layouts/full/full.component';
 import {TestComponent} from './view/test/test.component';
 import {DashboardComponent} from './view/dashboard/dashboard.component';
 import {OperacaoComponent} from './view/operacao/operacao.component';
+import {EntradaComponent} from './view/entrada/entrada.component';
+import {SaidaComponent} from './view/saida/saida.component';
 
 export const AppRoutes: Routes = [
   {
@@ -26,6 +28,14 @@ export const AppRoutes: Routes = [
       {
         path: 'operacao',
         component: OperacaoComponent
+      },
+      {
+        path: 'entrada',
+        component: EntradaComponent
+      },
+      {
+        path: 'saida',
+        component: SaidaComponent
       }
     ]
   }
