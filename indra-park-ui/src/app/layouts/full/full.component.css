@@ -7,6 +7,8 @@
   bottom: 0;
   left: 0;
   right: 0;
+  margin: 0;
+  padding: 0;
 }
 .topbar {
   position: relative;
@@ -24,4 +26,9 @@
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
 }

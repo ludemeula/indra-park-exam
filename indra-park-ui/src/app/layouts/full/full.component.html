@@ -1,14 +1,56 @@
 
+<!--<mat-sidenav-container class="mat-elevation-z6">-->
+  <!--<mat-sidenav #sidenav role="navigation">-->
+    <!--&lt;!&ndash;this is a place for us to add side-nav code&ndash;&gt;-->
+  <!--</mat-sidenav>-->
+  <!--<mat-sidenav-content>-->
+    <!--&lt;!&ndash;in here all the content must reside. We will add a navigation header as well&ndash;&gt;-->
+    <!--<main>-->
+      <!--<router-outlet></router-outlet>-->
+    <!--</main>-->
+  <!--</mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->
+
+
+
 <div class="main-container" >
-  <mat-toolbar color="primary" class="topbar telative">
+  <!--<mat-toolbar color="primary" class="topbar telative">-->
 
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button [routerLink]="['/test']" mat-menu-item>Test</button>
-      <button [routerLink]="['/operacoes']" mat-menu-item>Operações</button>
-    </mat-menu>
+    <!--<button mat-button [matMenuTriggerFor]="menu">Menu</button>-->
+    <!--<mat-menu #menu="matMenu">-->
+      <!--<button [routerLink]="['/test']" mat-menu-item>Test</button>-->
+    <!--</mat-menu>-->
 
+  <!--</mat-toolbar>-->
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>My First App</span>
+      <span class="example-fill-remaining-space"></span>
+      <span class="align-center"></span>
+      <span class="example-spacer"></span>
+      <button mat-button [routerLink]="['/operacao']">Operações</button>
+      <button mat-button>Contact</button>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voicemail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
   </mat-toolbar>
+
   <mat-sidenav-container class="example-sidenav-container" >
 
     <mat-sidenav-content class="page-wrapper">
@@ -23,3 +65,5 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
+

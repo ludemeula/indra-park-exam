@@ -20,7 +20,7 @@ import { OperacaoComponent } from './view/operacao/operacao.component';
     FullComponent,
     TestComponent,
     DashboardComponent,
-    OperacaoComponent
+    OperacaoComponent,
   ],
   imports: [
     MatMenuModule,
