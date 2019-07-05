@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {DashboardComponent} from './view/dashboard/dashboard.component';
 import {OperacaoComponent} from './view/operacao/operacao.component';
 import {SaidaComponent} from './view/saida/saida.component';
+import { EntradaComponent } from './view/entrada/entrada.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {SaidaComponent} from './view/saida/saida.component';
     DashboardComponent,
     OperacaoComponent,
     SaidaComponent,
+    EntradaComponent,
   ],
   imports: [
     MatMenuModule,
