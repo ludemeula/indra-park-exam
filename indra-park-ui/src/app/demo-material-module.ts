@@ -8,7 +8,9 @@
 
 import {NgModule} from '@angular/core';
 import {
-  MatButtonModule, MatButtonToggleModule, MatIconModule, MatMenuModule, MatSidenavContainer, MatSidenavModule, MatTableModule,
+  MatButtonModule, MatButtonToggleModule, MatIconModule, MatInputModule, MatMenuModule, MatSelectModule, MatSidenavContainer,
+  MatSidenavModule,
+  MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -65,7 +67,8 @@ import {
     MatButtonToggleModule,
     MatIconModule,
     MatTableModule,
-    //MatSidenavContainer
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class DemoMaterialModule {}
