@@ -1,2 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body, html {
+  margin: 0;
+}
+
+body {
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.container {
+  padding: 10px;
+}
+
+.mat-drawer-container {
+  background: white;
+}
+
+table.mat-table {
+  width: 100%;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  font-size: 14px;
+}
