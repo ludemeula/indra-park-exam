@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {OperacaoService} from '../../services/operacao.service';
-import {Veiculo} from '../../models/veiculo';
+import {Operacao} from '../../models/operacao';
 
 @Component({
   selector: 'app-operacao',
-  templateUrl: './operacao.component.html',
-  styleUrls: ['./operacao.component.css']
+  templateUrl: './operacao.component.html'
 })
 export class OperacaoComponent implements OnInit {
 
   displayedColumns: string[] = ['placa', 'modelo', 'horario', 'acao'];
-  dataSource: Veiculo[];
+  dataSource: Operacao[];
 
   constructor(private _api: OperacaoService) {}
 

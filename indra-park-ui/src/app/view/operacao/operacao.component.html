@@ -1,61 +1,42 @@
-<!--<div layout="row">-->
-<div class="container mat-elevation-z8">
+<h4>Lista de Operações</h4>
 
+<form class="">
+  <mat-form-field>
+    <input matInput name="nome_produto" placeholder="Nome do Produto" formControlName="nome_produto">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="preco_produto" placeholder="Preço do Produto" formControlName="preco_produto">
+  </mat-form-field>
 
-  <h3>Raised Buttons</h3>
-  <div class="example-button-row">
-    <button mat-raised-button>P</button>
-    <button mat-raised-button color="primary">Entrada</button>
-  </div>
+  <!--<button type="submit" mat-button color="primary" >Pesquisar</button>-->
+  <button mat-raised-button color="basic" routerLink="/entrada" style="margin: 0 10px">Pesquisar</button>
 
+  <button mat-raised-button color="primary" routerLink="/entrada">Entrada</button>
+</form>
 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="placa">
+    <th mat-header-cell *matHeaderCellDef>Placa</th>
+    <td mat-cell *matCellDef="let element"> {{element.placa}} </td>
+  </ng-container>
 
+  <ng-container matColumnDef="modelo">
+    <th mat-header-cell *matHeaderCellDef>Modelo</th>
+    <td mat-cell *matCellDef="let element"> {{element.modelo}} </td>
+  </ng-container>
 
-  <table mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="horario">
+    <th mat-header-cell *matHeaderCellDef>Data/Hora</th>
+    <td mat-cell *matCellDef="let element"> {{element.horario}} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="placa">
-      <th mat-header-cell *matHeaderCellDef>Placa</th>
-      <td mat-cell *matCellDef="let element"> {{element.placa}} </td>
-    </ng-container>
+  <ng-container matColumnDef="acao">
+    <th mat-header-cell *matHeaderCellDef> Ação </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-flat-button color="warn" routerLink="/saida">Saida</button>
+    </td>
+  </ng-container>
 
-    <ng-container matColumnDef="modelo">
-      <th mat-header-cell *matHeaderCellDef>Modelo</th>
-      <td mat-cell *matCellDef="let element"> {{element.modelo}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="horario">
-      <th mat-header-cell *matHeaderCellDef>Data/Hora</th>
-      <td mat-cell *matCellDef="let element"> {{element.horario}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="acao">
-      <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell *matCellDef="let element">
-        <button mat-flat-button color="warn" routerLink="/produto-detalhe/{{element._id}}" selected>Saida</button>
-      </td>
-    </ng-container>
-
-    <!--&lt;!&ndash; Name Column &ndash;&gt;-->
-    <!--<ng-container matColumnDef="name">-->
-      <!--<th mat-header-cell *matHeaderCellDef> Modelo </th>-->
-      <!--<td mat-cell *matCellDef="let veiculo"> {{veiculo.modelo}} </td>-->
-    <!--</ng-container>-->
-
-    <!--&lt;!&ndash; Weight Column &ndash;&gt;-->
-    <!--<ng-container matColumnDef="weight">-->
-      <!--<th mat-header-cell *matHeaderCellDef> Data/Hora </th>-->
-      <!--<td mat-cell *matCellDef="let element"> {{element.weight}} </td>-->
-    <!--</ng-container>-->
-
-    <!--&lt;!&ndash; Symbol Column &ndash;&gt;-->
-    <!--<ng-container matColumnDef="symbol">-->
-      <!--<th mat-header-cell *matHeaderCellDef> Opções </th>-->
-      <!--<td mat-cell *matCellDef="let element"> {{element.symbol}} </td>-->
-    <!--</ng-container>-->
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div>
-
-<!--</div>-->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
