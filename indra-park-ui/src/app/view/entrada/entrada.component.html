@@ -1,3 +1,23 @@
-<p>
-  entrada works!
-</p>
+<h4>Efetuar Entrada</h4>
+
+<form [formGroup]="form" (ngSubmit)="adicionar(form.value)">
+  <mat-form-field>
+    <input matInput name="placa" placeholder="Placa" formControlName="placa">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Tipo do Veículo</mat-label>
+    <mat-select formControlName="modelo">
+      <mat-option *ngFor="let tipo of tipos" [value]="tipo.value">
+        {{tipo.modelo}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button type="submit" mat-button color="primary" >Adicionar</button>
+
+  <button mat-raised-button color="primary" routerLink="/operacao">Cancelar</button>
+</form>
+
+
+

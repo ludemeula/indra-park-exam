@@ -8,7 +8,7 @@
 
 import {NgModule} from '@angular/core';
 import {
-  MatButtonModule, MatButtonToggleModule, MatIconModule, MatInputModule, MatMenuModule, MatSelectModule, MatSidenavContainer,
+  MatButtonModule, MatButtonToggleModule, MatDivider, MatIconModule, MatInputModule, MatMenuModule, MatSelectModule, MatSidenavContainer,
   MatSidenavModule,
   MatTableModule,
   MatToolbarModule
@@ -19,47 +19,6 @@ import {
  */
 @NgModule({
   exports: [
-    /*MatAutocompleteModule,
-
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatTableModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    MatGridListModule,
-
-    MatInputModule,
-    MatListModule,
-
-    MatBadgeModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-
-    MatSlideToggleModule,
-    MatSliderModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatStepperModule,
-    MatTabsModule,
-
-    MatTooltipModule,
-    MatNativeDateModule,
-    CdkTableModule,
-    A11yModule,
-    BidiModule,
-    CdkAccordionModule,
-    ObserversModule,
-    OverlayModule,
-    PlatformModule,
-    PortalModule*/
-
     MatToolbarModule,
     MatMenuModule,
     MatSidenavModule,

@@ -15,6 +15,7 @@ import {DashboardComponent} from './view/dashboard/dashboard.component';
 import {OperacaoComponent} from './view/operacao/operacao.component';
 import {SaidaComponent} from './view/saida/saida.component';
 import { EntradaComponent } from './view/entrada/entrada.component';
+import {FormsModule, NgControl, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { EntradaComponent } from './view/entrada/entrada.component';
     MatMenuModule,
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     DemoMaterialModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes)
