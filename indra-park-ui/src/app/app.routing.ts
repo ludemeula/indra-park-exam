@@ -34,7 +34,7 @@ export const AppRoutes: Routes = [
         component: EntradaComponent
       },
       {
-        path: 'saida',
+        path: 'saida/:id',
         component: SaidaComponent
       }
     ]
