@@ -1,3 +1,18 @@
-<p>
-  saida works!
-</p>
+<h4>Efetuar Saída</h4>
+
+<form [formGroup]="form">
+  <mat-form-field>
+    <input matInput name="placa" readonly="true" placeholder="Placa" formControlName="placa">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="valorTotal" readonly="true" placeholder="Valor Total" formControlName="valorTotal">
+  </mat-form-field>
+
+  <div class="group-buttons">
+    <button mat-raised-button color="accent" (click)="calcular()">Calcular</button>
+    <button mat-raised-button color="basic" (click)="sair()">Finalizar</button>
+    <button mat-raised-button color="primary" routerLink="/operacao">Cancelar</button>
+  </div>
+</form>
+
