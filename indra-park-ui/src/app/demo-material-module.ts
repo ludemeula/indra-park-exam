@@ -8,10 +8,9 @@
 
 import {NgModule} from '@angular/core';
 import {
-  MatButtonModule, MatButtonToggleModule, MatDivider, MatIconModule, MatInputModule, MatMenuModule, MatSelectModule, MatSidenavContainer,
-  MatSidenavModule,
-  MatTableModule,
-  MatToolbarModule
+  MatButtonModule, MatButtonToggleModule, MatDatepickerModule, MatNativeDateModule, MatIconModule, MatInputModule, MatMenuModule,
+  MatSelectModule,
+  MatSidenavModule, MatTableModule, MatToolbarModule, MatPaginatorModule
 } from '@angular/material';
 
 /**
@@ -27,7 +26,11 @@ import {
     MatIconModule,
     MatTableModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
   ]
 })
-export class DemoMaterialModule {}
+export class DemoMaterialModule {
+}

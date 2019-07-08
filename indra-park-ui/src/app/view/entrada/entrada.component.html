@@ -1,6 +1,6 @@
 <h4>Efetuar Entrada</h4>
 
-<form [formGroup]="form" (ngSubmit)="adicionar(form.value)">
+<form [formGroup]="form">
   <mat-form-field>
     <input matInput name="placa" placeholder="Placa" formControlName="placa">
   </mat-form-field>
@@ -14,9 +14,11 @@
     </mat-select>
   </mat-form-field>
 
-  <button type="submit" mat-button color="primary" >Adicionar</button>
+  <div class="group-buttons">
+    <button mat-raised-button color="basic" (click)="adicionar(form.value)">Adicionar</button>
 
-  <button mat-raised-button color="primary" routerLink="/operacao">Cancelar</button>
+    <button mat-raised-button color="primary" routerLink="/operacao">Cancelar</button>
+  </div>
 </form>
 
 

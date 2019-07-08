@@ -1,17 +1,26 @@
 <h4>Lista de Operações</h4>
 
-<form class="">
+<form [formGroup]="form">
   <mat-form-field>
-    <input matInput name="nome_produto" placeholder="Nome do Produto" formControlName="nome_produto">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput name="preco_produto" placeholder="Preço do Produto" formControlName="preco_produto">
+    <input matInput [matDatepicker]="dataEntrada" placeholder="Data de Entrada" formControlName="dataHoraEntrada">
+    <mat-datepicker-toggle matSuffix [for]="dataEntrada"></mat-datepicker-toggle>
+    <mat-datepicker #dataEntrada></mat-datepicker>
   </mat-form-field>
 
-  <!--<button type="submit" mat-button color="primary" >Pesquisar</button>-->
-  <button mat-raised-button color="basic" routerLink="/entrada" style="margin: 0 10px">Pesquisar</button>
+  <mat-form-field>
+    <input matInput [matDatepicker]="dataSaida" placeholder="Data de Saída" formControlName="dataHoraSaida">
+    <mat-datepicker-toggle matSuffix [for]="dataSaida"></mat-datepicker-toggle>
+    <mat-datepicker #dataSaida></mat-datepicker>
+  </mat-form-field>
 
-  <button mat-raised-button color="primary" routerLink="/entrada">Entrada</button>
+  <mat-form-field>
+    <input matInput name="placa" placeholder="Placa" formControlName="placa">
+  </mat-form-field>
+
+  <div class="group-buttons">
+    <button mat-raised-button color="basic" (click)="pesquisar(form.value)">Pesquisar</button>
+    <button mat-raised-button color="primary" routerLink="/entrada">Entrada</button>
+  </div>
 </form>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -25,15 +34,28 @@
     <td mat-cell *matCellDef="let element"> {{element.modelo}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="horario">
-    <th mat-header-cell *matHeaderCellDef>Data/Hora</th>
-    <td mat-cell *matCellDef="let element"> {{element.horario}} </td>
+  <ng-container matColumnDef="dataHoraEntrada">
+    <th mat-header-cell *matHeaderCellDef>Data/Hora de Entrada</th>
+    <td mat-cell *matCellDef="let element"> {{element.dataHoraEntrada | date: 'dd/MM/y - HH:mm'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dataHoraSaida">
+    <th mat-header-cell *matHeaderCellDef>Data/Hora de Saída</th>
+    <td mat-cell *matCellDef="let element"> {{element.dataHoraSaida  | date: 'dd/MM/y - HH:mm'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="totalPago">
+    <th mat-header-cell *matHeaderCellDef>Total Pago</th>
+    <td mat-cell *matCellDef="let element"> {{element.valorTotal | currency:'BRL':true}} </td>
   </ng-container>
 
   <ng-container matColumnDef="acao">
     <th mat-header-cell *matHeaderCellDef> Ação </th>
     <td mat-cell *matCellDef="let element">
-      <button mat-flat-button color="warn" routerLink="/saida">Saida</button>
+      <div [hidden]="element.tipo == 'SAIDA'">
+        <button mat-flat-button color="warn" routerLink="/saida/{{element.id}}"  >Saida</button>
+      </div>
+      <span [hidden]="element.tipo == 'ENTRADA'"> - </span>
     </td>
   </ng-container>
 

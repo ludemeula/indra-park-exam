@@ -6,5 +6,6 @@ export class Operacao {
   tipo: string;
   dataHoraEntrada: string;
   dataHoraSaida: string;
+  valorTotal: number;
 
 }

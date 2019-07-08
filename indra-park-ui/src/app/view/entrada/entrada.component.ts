@@ -9,8 +9,6 @@ import {Router} from '@angular/router';
 })
 export class EntradaComponent implements OnInit {
 
-  constructor(private api: OperacaoService, private formBuilder: FormBuilder, private router: Router) { }
-
   tipos =  [
     {value: 'CARRO', modelo: 'Carro', valor: 15},
     {value: 'MOTO', modelo: 'Moto', valor: 10},
@@ -20,7 +18,7 @@ export class EntradaComponent implements OnInit {
 
   form: FormGroup;
 
-
+  constructor(private api: OperacaoService, private formBuilder: FormBuilder, private router: Router) { }
   ngOnInit() {
     this.form = this.formBuilder.group({
       placa : [null, Validators.required],
@@ -35,5 +33,4 @@ export class EntradaComponent implements OnInit {
       console.log(error);
     });
   }
-
 }

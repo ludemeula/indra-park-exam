@@ -24,3 +24,10 @@ table.mat-table {
 .mat-form-field-appearance-legacy .mat-form-field-infix {
   font-size: 14px;
 }
+
+.group-buttons {
+  display: inline;
+}
+  .group-buttons .mat-raised-button {
+    margin-left: 15px;
+  }
