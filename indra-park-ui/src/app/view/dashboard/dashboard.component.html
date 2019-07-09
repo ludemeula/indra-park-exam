@@ -1,3 +1,12 @@
-<p>
-  dashboard works!
-</p>
+<h4>Dasboard de Operações</h4>
+
+<div>
+  <canvas
+    baseChart
+    [chartType]="'line'"
+    [datasets]="chartData"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    [legend]="true">
+  </canvas>
+</div>
