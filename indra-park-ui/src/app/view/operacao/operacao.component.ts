@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OperacaoService} from '../../services/operacao.service';
 import {Operacao} from '../../models/operacao';
 import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
+
 
 @Component({
   selector: 'app-operacao',
@@ -24,17 +25,29 @@ export class OperacaoComponent implements OnInit {
       dataHoraSaida: ''
     });
 
-    this._api.getAll()
-      .subscribe(response => {
-
-        this.dataSource = response;
-        console.log(this.dataSource);
-      }, err => {
-        console.log(err);
-      });
+    this._api.getAll().subscribe(response => {
+      this.dataSource = response;
+      console.log(this.dataSource);
+    }, err => {
+      console.log(err);
+    });
   }
 
   pesquisar(form: NgForm) {
-    console.log(form);
+    this._api.pesquisa(this.parseData(form['dataHoraEntrada']), this.parseData(form['dataHoraSaida']), form['placa']).subscribe(response => {
+      this.dataSource = response;
+      console.log(this.dataSource);
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  parseData(data) {
+    let parse = null;
+    if (data) {
+      parse = new Date(data).toISOString();
+    }
+
+    return parse;
   }
 }
