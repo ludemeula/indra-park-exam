@@ -1,5 +1,7 @@
 package com.indraparkapi.model;
 
+import com.indraparkapi.enums.TipoVeiculo;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,7 +16,7 @@ public class Veiculo {
     private String placa;
 
     @Column(name = "modelo", nullable = false)
-    private String modelo;
+    private TipoVeiculo modelo;
 
 
     public long getId() {
@@ -31,13 +33,5 @@ public class Veiculo {
 
     public void setPlaca(String placa) {
         this.placa = placa;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
     }
 }
