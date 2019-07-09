@@ -3,7 +3,7 @@ Desafio técnico – Desenvolvedor Web
 
 ### Database
 
-* [Postgres] 
+* [Postgres]
 
 ### Clone
 Run: `git clone https://github.com/Andryev/indra-park-exam.git`
@@ -13,11 +13,13 @@ Run: `git clone https://github.com/Andryev/indra-park-exam.git`
 Run: `mvn clean install`
 
 ### Config Database
-
 Configurar o banco de dados em application.properties.
+Criar Database: `create database indra-park-exam`
 
 ### Start
 
 Run: `IndraParkApiApplication.java`
 
-
+Run indra-park-ui:
+`npm install`
+`ng serve`

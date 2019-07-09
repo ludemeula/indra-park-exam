@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OperacaoService} from '../../services/operacao.service';
-import {build$} from 'protractor/built/element';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +9,14 @@ export class DashboardComponent implements OnInit {
 
   chartLabels = [];
   chartData = [];
+
+  chartOptions = {
+    elements: {
+      line: {
+        fill: false
+      }
+    }
+  };
 
   constructor(private _api: OperacaoService) { }
 
@@ -22,14 +29,6 @@ export class DashboardComponent implements OnInit {
       console.log(err);
     });
   }
-
-  chartOptions = {
-    elements: {
-      line: {
-        fill: false
-      }
-    }
-  };
 
   buildLabel() {
     let _dataInicial = new Date();
@@ -45,8 +44,7 @@ export class DashboardComponent implements OnInit {
   buildData(response) {
     let resultados = [];
 
-    let modelos = ['CARRO', 'MOTO', 'CAMINHAO', 'CAMINHONETE'];
-    modelos.forEach(modelo => {
+    ['CARRO', 'MOTO', 'CAMINHAO', 'CAMINHONETE'].forEach(modelo => {
       let dash = {};
       let data = [];
       this.chartLabels.forEach(label => {
@@ -61,11 +59,7 @@ export class DashboardComponent implements OnInit {
       dash['label'] = modelo;
 
       resultados.push(dash);
-
     });
-    console.log(resultados)
-
     return resultados;
-
   }
 }

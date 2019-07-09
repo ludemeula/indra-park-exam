@@ -27,13 +27,12 @@ import java.util.Optional;
 public class OperacaoServiceImpl implements  OperacaoService {
 
     private OperacaoRepository operacaoRepository;
-
-    @Autowired
     private OperacaoRepositoryCustom operacaoRepositoryCustom;
 
     @Autowired
-    public OperacaoServiceImpl(OperacaoRepository operacaoRepository) {
+    public OperacaoServiceImpl(OperacaoRepository operacaoRepository, OperacaoRepositoryCustom operacaoRepositoryCustom) {
         this.operacaoRepository = operacaoRepository;
+        this.operacaoRepositoryCustom = operacaoRepositoryCustom;
     }
 
     @Override
@@ -44,14 +43,6 @@ public class OperacaoServiceImpl implements  OperacaoService {
         operacao.setTipo(TipoOperacao.ENTRADA);
 
         return operacaoRepository.save(operacao);
-    }
-
-    private void validarDuplicata(String placa) throws Exception {
-       // boolean possuiDuplicata = operacaoRepository.findDuplicata(placa) > 0;
-
-//        if (possuiDuplicata) {
-//            throw new Exception("Este veículo já se encontra no pátio!");
-//        }
     }
 
     @Override

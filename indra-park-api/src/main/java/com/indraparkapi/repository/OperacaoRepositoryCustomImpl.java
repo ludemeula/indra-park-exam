@@ -1,6 +1,7 @@
 package com.indraparkapi.repository;
 
 import com.indraparkapi.model.Operacao;
+import com.indraparkapi.model.dto.DashboardDto;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -33,7 +34,7 @@ public class OperacaoRepositoryCustomImpl implements OperacaoRepositoryCustom {
         if (dataSaida.isPresent())
             query.setParameter("dataSaida", dataSaida.get());
         if (placa.isPresent())
-            query.setParameter("placa", placa.get());
+            query.setParameter("placa", "%" + placa.get().toUpperCase() + "%");
 
         return query.getResultList();
     }

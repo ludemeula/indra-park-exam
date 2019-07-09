@@ -1,5 +1,6 @@
 package com.indraparkapi.resources;
 
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import com.indraparkapi.enums.TipoVeiculo;
 import com.indraparkapi.model.Operacao;
 import com.indraparkapi.model.dto.DashboardDto;
